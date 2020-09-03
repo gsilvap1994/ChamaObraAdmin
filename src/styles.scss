@@ -1,1 +1,230 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "./styles/variables";
+
+
+// Default font and properties
+body {
+  // font-family: 'Montserrat', sans-serif !important;
+  background-color: #fff;
+  min-height: 100vh;
+  color: $color-text;
+  font-size: 1rem;
+}
+
+
+
+// headers
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 1.25rem;
+  margin-bottom: 0;
+}
+
+
+// background with orange backdrop
+main {
+  &.orange-backdrop {
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      top: 0;
+      left: 0;
+      height: 50vh;
+      background-color: $primary-orange;
+      position: absolute;
+      z-index: 0;
+      border-bottom-right-radius: $default-border-radius;
+      border-bottom-left-radius: $default-border-radius;
+    }
+  }
+}
+
+
+// border radius and shadow for elements
+.card,
+.form-control {
+  border-radius: $default-border-radius;
+  box-shadow: $default-box-shadow;
+  min-height: $default-form-control-and-btn-height;
+}
+
+// form error and succes styles
+form {
+  &.ng-touched {
+    .ng-invalid {
+      border-color: $error-feedback;
+    }
+
+    .ng-valid {
+      border-color: $success-feedback;
+    }
+  }
+}
+
+// input group (input with button)
+.input-group {
+  input {
+    border-bottom-left-radius: $default-border-radius !important;
+    border-bottom-right-radius: $default-border-radius !important;
+    border-top-left-radius: $default-border-radius !important;
+    border-top-right-radius: $default-border-radius !important;
+  }
+
+  .input-group-prepend,
+  .input-group-prepend {
+    border-radius: $default-border-radius;
+    position: absolute;
+    left: 0;
+    min-height: $default-form-control-and-btn-height;
+    z-index: 99;
+  }
+
+  .input-group-append {
+    border-radius: $default-border-radius;
+    position: absolute;
+    right: 0;
+    min-height: $default-form-control-and-btn-height;
+    z-index: 99;
+
+    &.primary {
+      background-color: $primary-orange;
+      min-height: $default-form-control-and-btn-height;
+    }
+
+    button {
+      border-radius: $default-border-radius;
+      border-top-left-radius: $default-border-radius !important;
+      border-bottom-left-radius: $default-border-radius !important;
+    }
+  }
+}
+
+// buttons
+.btn-primary {
+  background-color: $primary-orange;
+  border-color: $primary-orange;
+  color: white;
+
+  &:hover {
+    background-color: $primary-orange-hover;
+    border-color: $primary-orange-hover;
+  }
+}
+
+.btn-outline-primary {
+  color: $primary-orange;
+  border-color: $primary-orange;
+
+  &:hover {
+    color: #FFF;
+    background-color: $primary-orange;
+    border-color: $primary-orange;
+  }
+
+  &:active {
+    color: #FFF !important;
+    background-color: $primary-orange !important;
+    border-color: $primary-orange !important;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(251, 144, 54, .5) !important;
+  }
+}
+
+.btn-secondary {
+  border-color: $color-text;
+  background-color: $color-text;
+  color: $light-grey;
+}
+
+.btn {
+  &.rounded {
+    border-radius: 1000px !important;
+  }
+}
+
+.btn-icon {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 1000px;
+  padding: 0px;
+  width: 35px;
+  height: 35px;
+  background-color: rgb(194, 194, 194);
+
+  &:hover {
+    background-color: rgba(194, 194, 194, 0.5);
+  }
+}
+
+
+// input thin
+input {
+  &.thin {
+    &.form-control {
+      border: none;
+      box-shadow: none;
+      border-radius: 0;
+      border-bottom: 1px solid #ced4da;
+
+      &:focus {
+        box-shadow: 0px 1px 1px 0rem rgba(0, 123, 255, 0.25);
+        border: none;
+      }
+    }
+  }
+}
+
+
+
+
+// text helpers
+.text-primary {
+  color: $primary-orange !important;
+}
+
+.text-secondary {
+  color: $color-text !important;
+}
+
+.text-light {
+  color: $light-grey !important;
+}
+
+.text-lighter {
+  color: $lighter-grey !important;
+}
+
+// background helpers
+.bg-primary {
+  background-color: $primary-orange !important;
+}
+
+.bg-secondary {
+  background-color: $color-text !important;
+}
+
+.bg-light {
+  background-color: $light-grey !important;
+}
+
+.bg-lighter {
+  background-color: $lighter-grey !important;
+}

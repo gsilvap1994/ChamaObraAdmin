@@ -1,0 +1,40 @@
+@import '../../../styles/variables';
+
+.image-card {
+  max-width: 200px;
+
+  &.image {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    height: 150px;
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+
+  &.text {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-top: none;
+
+    .card-body {
+      padding: 15px 10px;
+      min-height: 5px;
+    }
+  }
+}
+
+.not-service-card {
+  min-height: 205px;
+  max-width: 200px;
+  background-color: transparent;
+  border-color: $primary-orange;
+  border-width: 2px;
+
+  .card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
