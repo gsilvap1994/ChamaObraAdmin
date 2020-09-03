@@ -1,0 +1,16 @@
+<div class="btn-holder" [class.active]="!isActive" [class.inactive]="isActive">
+  <button (click)="isActive = !isActive" class="btn btn-primary">
+    Ver notas <span class="pl-2"><img src="/assets/icons/chevron-up.png"></span>
+  </button>
+</div>
+
+<div class="card notes-card" [class.active]="isActive" [class.inactive]="!isActive">
+  <div class="card-header">
+    <button (click)="isActive = !isActive" class="btn btn-primary">
+      Esconder notas <span class="pl-2"><img class="inverted" src="/assets/icons/chevron-up.png"></span>
+    </button>
+  </div>
+  <div class="card-body">
+    <ng-content></ng-content>
+  </div>
+</div>

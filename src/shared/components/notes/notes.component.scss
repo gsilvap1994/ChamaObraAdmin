@@ -1,0 +1,42 @@
+.btn-holder {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  position: fixed;
+  bottom: 0;
+
+  &.inactive {
+    display: none;
+  }
+}
+
+.inverted {
+  transform: rotate(180deg)
+}
+
+.notes-card {
+  transition: height 2s ease;
+  overflow-y: scroll;
+
+  &.inactive {
+    height: 0;
+    margin-bottom: -50px;
+    display: none;
+  }
+
+  &.active {
+    height: 50vh;
+  }
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+
+  .card-header {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    padding-top: 0px;
+    border-bottom: none;
+  }
+}
