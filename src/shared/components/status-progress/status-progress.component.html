@@ -1,0 +1,31 @@
+<div class="header my-2">
+  <p class="mb-0">Progresso do Serviço</p>
+</div>
+<div class="status-progress">
+  <div class="dates mr-2">
+    <div class="date" *ngFor="let date of dates">
+      <p>{{date | date:'dd/MM/yyyy'}} <br> {{date | date: 'hh:mm a'}}</p>
+    </div>
+  </div>
+  <div class="progress-bar-container">
+    <div class="progress-bar"
+      [class.accepted]="dates.length == 1"
+      [class.in-transit]="dates.length == 2"
+      [class.executing]="dates.length == 3"
+      [class.concluded]="dates.length == 4"></div>
+  </div>
+  <div class="labels ml-2">
+    <div class="label">
+      <p>Serviço aceito</p>
+    </div>
+    <div class="label">
+      <p>A caminho</p>
+    </div>
+    <div class="label">
+      <p>Em execução</p>
+    </div>
+    <div class="label">
+      <p>Concluido</p>
+    </div>
+  </div>
+</div>

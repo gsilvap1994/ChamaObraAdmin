@@ -1,0 +1,56 @@
+@import '../../../styles/variables';
+
+.status-progress {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+
+  .progress-bar-container {
+    height: 200px;
+    width: 4px;
+    background-color: #dddddd;
+    border-radius: 2px;
+
+    .progress-bar {
+      background-color: $primary-orange;
+      border-radius: 2px;
+
+       &.accepted {
+         height: 25%;
+       }
+
+       &.in-transit {
+         height: 50%;
+       }
+
+       &.executing {
+         height: 75%;
+       }
+
+       &.concluded {
+         height: 100%;
+       }
+    }
+
+  }
+}
+
+.dates, .labels {
+  .date, .label {
+    font-weight: 300;
+    font-size: .85rem;
+
+    p {
+      margin-top: 1px;
+      margin-bottom: 13px;
+    }
+  }
+
+  .label {
+    p {
+      margin-top: 1px;
+      margin-bottom: 33px;
+
+    }
+  }
+}
