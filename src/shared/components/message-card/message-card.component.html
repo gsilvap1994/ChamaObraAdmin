@@ -1,0 +1,21 @@
+<div [class]="message.type == 'client' ? 'client' : 'professional'" class="message card my-4" *ngIf="message && !message.isSystem">
+  <div class="card-header">
+    <div class="name">{{message.author}}</div>
+    <div class="hour">
+      {{message.messageHour}}
+    </div>
+  </div>
+  <div class="card-body">
+    <p class="header small mb-2">{{message.messageHeader}}</p>
+    <p class="text text-thin small mb-2"> {{message.messageText}}</p>
+    <p *ngIf="message.type === 'client'"><a href="javascript:void(0)" class="text-primary small" >Ver detalhes</a></p>
+  </div>
+</div>
+
+<div class="system-message" *ngIf="message && message.isSystem">
+  <div class="card system-card">
+    <div class="card-body">
+      {{message.messageText}}
+    </div>
+  </div>
+</div>

@@ -21,6 +21,8 @@
         <div class="card my-3" style="width: 160px">
           <img style="border-radius: 10px;" src="/assets/images/test.jpeg" class="img-fluid" alt="">
         </div>
+
+        <app-message-card *ngIf="message" [message]="message"></app-message-card>
       </div>
     </div>
   </div>

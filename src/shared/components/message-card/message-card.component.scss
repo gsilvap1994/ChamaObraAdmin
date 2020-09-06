@@ -1,0 +1,35 @@
+@import '../../../styles/variables';
+
+.message {
+  max-width: 300px;
+
+  &.professional {
+    background-color: $primary-orange;
+
+    .card-header {
+      background-color: $primary-orange;
+    }
+
+    .name,
+    .hour,
+    .header,
+    .text {
+      color: #fff;
+    }
+  }
+
+  .card-header {
+    background-color: #fff;
+    border-radius: 10px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.system-card {
+  background-color: #f4eee6;
+  border-color: #f4eee6;
+  box-shadow: none;
+}
