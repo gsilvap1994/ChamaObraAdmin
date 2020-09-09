@@ -210,9 +210,13 @@ form {
   width: 35px;
   height: 35px;
   background-color: rgb(194, 194, 194);
+  border-color: rgb(194, 194, 194);
+  box-shadow: none;
 
-  &:hover {
-    background-color: rgba(194, 194, 194, 0.5);
+  &:hover, &:active, &:focus {
+    background-color: rgba(194, 194, 194, 0.5)!important;
+    border-color: rgba(194, 194, 194, 0.5)!important;
+    box-shadow: none!important;
   }
 }
 

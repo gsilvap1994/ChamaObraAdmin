@@ -1,0 +1,52 @@
+<div class="list-item" *ngIf="item">
+  <div class="container">
+    <div class="row">
+      <div class="col-1">
+        <img class="img-fluid rounded-circle" [src]="item.image" [alt]="item.name">
+      </div>
+      <div class="col">
+        <span class="small">
+          {{item.name}}
+        </span>
+      </div>
+      <div class="col" *ngIf="item.categories && item.categories.length">
+        <span class="small">
+          {{item.categories | category}}
+        </span>
+      </div>
+      <div class="col" *ngIf="item.status">
+        <span class="small">
+          {{ item.status }}
+        </span>
+      </div>
+      <div class="col" *ngIf="item.id">
+        <span class="small">
+          {{ item.id }}
+        </span>
+      </div>
+      <div class="col" *ngIf="item.createdAt && item.createdAt.date">
+        <span class="small">
+          {{ item.createdAt.date | date:'dd/MM/yyyy' }}
+        </span>
+      </div>
+      <div class="col d-flex justify-content-end" *ngIf="item.actions && item.actions.length">
+        <button
+          style="width: 28px; height: 28px; position: relative;"
+          class="btn btn-icon mr-2"
+          *ngIf="item.actions.indexOf('email') !== -1"
+          (click)="onActionClick('email')"
+        >
+          <img style="margin-top: -3px; width: 16px;" class="img-fluid" src="/assets/icons/email.png" alt="email">
+        </button>
+        <button
+          style="width: 28px; height: 28px; position: relative;"
+          class="btn btn-icon"
+          *ngIf="item.actions.indexOf('delete') !== -1"
+          (click)="onActionClick('remove')"
+        >
+          <img style="margin-top: -5px; width: 16px;" class="img-fluid" src="/assets/icons/trash.png" alt="Remover">
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

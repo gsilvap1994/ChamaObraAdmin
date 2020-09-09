@@ -11,8 +11,10 @@ import { ImageCardComponent } from './components/image-card/image-card.component
 import { NotesComponent } from './components/notes/notes.component';
 import { StatusProgressComponent } from './components/status-progress/status-progress.component';
 import { RichTextEditorComponent } from './components/rich-text-editor/rich-text-editor.component';
+import { ListItemComponent } from './components/list-item/list-item.component';
 
 import { NavbarComponent } from './templates/navbar/navbar.component';
+import { CategoryPipe } from './pipes/category.pipe';
 
 
 
@@ -25,6 +27,8 @@ import { NavbarComponent } from './templates/navbar/navbar.component';
     StatusProgressComponent,
     RichTextEditorComponent,
     NavbarComponent,
+    ListItemComponent,
+    CategoryPipe,
   ],
   imports: [
     CommonModule,
@@ -55,7 +59,8 @@ import { NavbarComponent } from './templates/navbar/navbar.component';
     NotesComponent,
     StatusProgressComponent,
     RichTextEditorComponent,
-    NavbarComponent
+    NavbarComponent,
+    ListItemComponent
   ]
 })
 export class SharedModule { }
