@@ -1,42 +1,52 @@
-<main class="mt-5 orange-backdrop">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="card">
-          <div class="card-body">
-            <h2>Olá</h2>
+<div class="container-fluid orange-backdrop">
+  <div class="row">
+    <div class="col-2">
+      <app-navbar></app-navbar>
+    </div>
+    <div class="col-10">
+      <main class="pt-5" style="margin-right: -15px;">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <h2>Olá</h2>
 
-            <div class="mt-5 form-group">
-              <input type="text" class="thin form-control">
+                  <div class="mt-5 form-group">
+                    <input type="text" class="thin form-control">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-12 my-4">
+              <app-featured-card [title]="'7,5 mil'" [description]="'Profissionais ativos'" [orangeBg]="false"></app-featured-card>
+            </div>
+            <div class="col-12 my-4">
+              <app-image-card [serviceName]="'Nome'" [serviceImage]="'/assets/images/test.jpeg'" [isService]="true"></app-image-card>
+            </div>
+            <div class="col-12 my-4">
+              <app-rich-text-editor></app-rich-text-editor>
+            </div>
+            <div class="col-12 my-4">
+              <app-status-progress></app-status-progress>
+            </div>
+            <div class="col-12 my-4">
+              <div class="card" style="width: 160px">
+                <img style="border-radius: 10px;" src="/assets/images/test.jpeg" class="img-fluid" alt="">
+              </div>
+            </div>
+            <div class="col-12 my-4">
+              <app-message-card *ngIf="message" [message]="message"></app-message-card>
             </div>
           </div>
         </div>
-      </div>
+      </main>
     </div>
-    <div class="row mt-5">
-      <div class="col-12 my-4">
-        <app-featured-card [title]="'7,5 mil'" [description]="'Profissionais ativos'" [orangeBg]="false"></app-featured-card>
-      </div>
-      <div class="col-12 my-4">
-        <app-image-card [serviceName]="'Nome'" [serviceImage]="'/assets/images/test.jpeg'" [isService]="true"></app-image-card>
-      </div>
-      <div class="col-12 my-4">
-        <app-status-progress></app-status-progress>
-      </div>
-      <div class="col-12 my-4">
-        <div class="card" style="width: 160px">
-          <img style="border-radius: 10px;" src="/assets/images/test.jpeg" class="img-fluid" alt="">
-        </div>
-      </div>
-      <div class="col-12 my-4">
-        <app-message-card *ngIf="message" [message]="message"></app-message-card>
-      </div>
-      <div class="col-12 my-4">
-        <app-rich-text-editor></app-rich-text-editor>
-      </div>
-    </div>
+
   </div>
-</main>
+</div>
 <!-- <app-notes>
   <p>Olá</p>
 </app-notes> -->

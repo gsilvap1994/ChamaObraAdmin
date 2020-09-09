@@ -8,11 +8,13 @@ form {
   .ql-toolbar.ql-snow {
     border-top-right-radius: $default-border-radius;
     border-top-left-radius: $default-border-radius;
+    background-color: #fff;
   }
 
   .ql-container.ql-snow {
     border-bottom-right-radius: $default-border-radius;
     border-bottom-left-radius: $default-border-radius;
     min-height: 90px;
+    background-color: #fff;
   }
 }

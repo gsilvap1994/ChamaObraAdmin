@@ -1,8 +1,8 @@
 <div class="service-cards-holder" *ngIf="isService">
   <div class="card image-card image" [style.backgroundImage]="'url('+ serviceImage +')'">
     <!-- <img  src="/assets/icons/camera.png" class="icon" alt="Camera" > -->
-    <button class="btn btn-icon" (click)="buttonClicked('service-image')">
-      <img class="img-fluid" src="/assets/icons/camera.png" alt="Camera">
+    <button style="width: 38px;" class="btn btn-icon" (click)="buttonClicked('service-image')">
+      <img style="margin-top: -5px;" class="img-fluid" src="/assets/icons/camera.png" alt="Camera">
     </button>
   </div>
   <div class="card image-card text">
@@ -12,8 +12,8 @@
           <p class="mb-0">{{serviceName}}</p>
         </div>
       </div>
-      <button style="bottom: 9px;" class="btn btn-icon" (click)="buttonClicked('service-name')">
-        <img class="img-fluid" src="/assets/icons/trash.png" alt="Remover">
+      <button style="bottom: 9px; width: 38px;" class="btn btn-icon" (click)="buttonClicked('service-name')">
+        <img style="margin-top: -3px;" class="img-fluid" src="/assets/icons/trash.png" alt="Remover">
       </button>
     </div>
   </div>

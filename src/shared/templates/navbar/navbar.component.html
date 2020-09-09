@@ -1,0 +1,48 @@
+<div class="fixed-nav">
+  <div class="top-logo">
+    <img class="img-fluid" src="/assets/logo/logo-laranja.png" alt="Logo Chama Obra">
+  </div>
+
+  <div class="nav-links">
+    <ul class="links">
+      <li *ngFor="let link of navLinks">
+        <div (click)="activate(link.id)" class="not-active-link" *ngIf="!link.isActive">
+          <img src="/assets/icons/{{link.icon}}-regular.png" [alt]="link.name" class="img-fluid">
+          <span class="small">{{link.name}}</span>
+        </div>
+        <div class="active-link" *ngIf="link.isActive">
+          <div class="card bg-primary">
+            <div class="card-body">
+              <img src="/assets/icons/{{link.icon}}-light.png" [alt]="link.name" class="img-fluid">
+              <span class="text-white small">{{link.name}}</span>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="logout-card">
+    <span class="ml-3 small thin"> <strong>{{dateNow | date:'HH:mm'}}</strong> <span class="ml-2">{{dateNow | date:'dd.MM.yyyy'}}</span></span>
+    <div class="card">
+      <div class="card-body p-3">
+        <div class="row">
+          <div class="col-5 pr-0 d-flex align-items-center">
+            <img class="rounded-circle img-fluid" src="/assets/images/test.jpeg" alt="Foto de perfil">
+          </div>
+          <div class="col-7">
+            <div class="greeting-logout">
+              <p class="mb-0 text-primary small">
+                Olá, Bruno!
+              </p>
+              <p class="mb-0 logout small d-flex align-items-center">
+                <img src="/assets/icons/log-out.png" alt="LogOut">
+                <span class="ml-2">Sair</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

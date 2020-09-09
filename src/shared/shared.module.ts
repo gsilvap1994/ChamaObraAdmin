@@ -12,6 +12,8 @@ import { NotesComponent } from './components/notes/notes.component';
 import { StatusProgressComponent } from './components/status-progress/status-progress.component';
 import { RichTextEditorComponent } from './components/rich-text-editor/rich-text-editor.component';
 
+import { NavbarComponent } from './templates/navbar/navbar.component';
+
 
 
 @NgModule({
@@ -22,6 +24,7 @@ import { RichTextEditorComponent } from './components/rich-text-editor/rich-text
     NotesComponent,
     StatusProgressComponent,
     RichTextEditorComponent,
+    NavbarComponent,
   ],
   imports: [
     CommonModule,
@@ -51,7 +54,8 @@ import { RichTextEditorComponent } from './components/rich-text-editor/rich-text
     ImageCardComponent,
     NotesComponent,
     StatusProgressComponent,
-    RichTextEditorComponent
+    RichTextEditorComponent,
+    NavbarComponent
   ]
 })
 export class SharedModule { }

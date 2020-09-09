@@ -38,22 +38,27 @@ h6 {
 
 
 // background with orange backdrop
-main {
-  &.orange-backdrop {
-    &::before {
-      content: '';
-      display: block;
-      width: 100%;
-      top: 0;
-      left: 0;
-      height: 50vh;
-      background-color: $primary-orange;
-      position: absolute;
-      z-index: 0;
-      border-bottom-right-radius: $default-border-radius;
-      border-bottom-left-radius: $default-border-radius;
-    }
+.orange-backdrop {
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 50vh;
+    background-color: $primary-orange;
+    position: absolute;
+    z-index: 0;
+    border-bottom-right-radius: $default-border-radius;
+    border-bottom-left-radius: $default-border-radius;
+    z-index: auto;
   }
+}
+
+// main
+main {
+  max-height: 100vh;
+  overflow-y: scroll;
 }
 
 
@@ -264,4 +269,10 @@ input {
 
 .bg-lighter {
   background-color: $lighter-grey !important;
+}
+
+
+// circle image
+.circle-img {
+  border-radius: 100000px;
 }
