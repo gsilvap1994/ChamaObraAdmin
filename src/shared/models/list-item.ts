@@ -5,7 +5,7 @@ export class ListItem {
   status?: string;
   createdAt?: {
     date: Date;
-    label?: string;
+    label: string;
   }
   id?: string;
   actions?: string[]

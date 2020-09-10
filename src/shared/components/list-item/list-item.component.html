@@ -1,31 +1,31 @@
-<div class="list-item" *ngIf="item">
+<div class="list-item my-3" *ngIf="item">
   <div class="container">
     <div class="row">
-      <div class="col-1">
+      <div class="col-1 d-flex align-items-center">
         <img class="img-fluid rounded-circle" [src]="item.image" [alt]="item.name">
       </div>
-      <div class="col">
-        <span class="small">
+      <div class="col d-flex align-items-center">
+        <span class="small" style="font-weight: 500;">
           {{item.name}}
         </span>
       </div>
-      <div class="col" *ngIf="item.categories && item.categories.length">
-        <span class="small">
+      <div class="col d-flex align-items-center" *ngIf="item.categories && item.categories.length">
+        <span class="small thin">
           {{item.categories | category}}
         </span>
       </div>
-      <div class="col" *ngIf="item.status">
-        <span class="small">
+      <div class="col d-flex align-items-center" *ngIf="item.status">
+        <span class="small thin">
           {{ item.status }}
         </span>
       </div>
-      <div class="col" *ngIf="item.id">
-        <span class="small">
+      <div class="col d-flex align-items-center" *ngIf="item.id">
+        <span class="small thin">
           {{ item.id }}
         </span>
       </div>
-      <div class="col" *ngIf="item.createdAt && item.createdAt.date">
-        <span class="small">
+      <div class="col d-flex align-items-center" *ngIf="item.createdAt && item.createdAt.date">
+        <span class="small thin">
           {{ item.createdAt.date | date:'dd/MM/yyyy' }}
         </span>
       </div>

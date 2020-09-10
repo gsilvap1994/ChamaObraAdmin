@@ -1,0 +1,36 @@
+
+<div class="list-view-header">
+  <div class="container">
+    <div class="row">
+      <div class="offset-1 col">
+        <p class="text-primary">Nome</p>
+      </div>
+      <div class="col" *ngIf="firstItem.categories && firstItem.categories.length">
+        <p class="text-primary">
+          Categoria
+        </p>
+      </div>
+      <div class="col" *ngIf="firstItem.status">
+        <p class="text-primary">
+          Status
+        </p>
+      </div>
+      <div class="col" *ngIf="firstItem.id">
+        <p class="text-primary">
+          ID
+        </p>
+      </div>
+      <div class="col" *ngIf="firstItem.createdAt">
+        <p class="text-primary">
+          {{firstItem.createdAt.label}}
+        </p>
+      </div>
+      <div class="col" *ngIf="firstItem.actions && firstItem.actions.length">
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="list-view-table">
+    <app-list-item *ngFor="let listItem of listView" [item]="listItem"></app-list-item>
+</div>

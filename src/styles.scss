@@ -209,13 +209,13 @@ form {
   padding: 0px;
   width: 35px;
   height: 35px;
-  background-color: rgb(194, 194, 194);
-  border-color: rgb(194, 194, 194);
+  background-color: #f4eee6;
+  border-color: #f4eee6;
   box-shadow: none;
 
   &:hover, &:active, &:focus {
-    background-color: rgba(194, 194, 194, 0.5)!important;
-    border-color: rgba(194, 194, 194, 0.5)!important;
+    background-color: rgb(194, 194, 194)!important;
+    border-color: rgb(194, 194, 194)!important;
     box-shadow: none!important;
   }
 }

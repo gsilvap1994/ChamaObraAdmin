@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { ListItem } from '../../models/list-item';
+// import { ListItem } from '../../models/list-item';
+import { Admin } from '../../models/admin';
 
 @Component({
   selector: 'app-list-item',
@@ -9,7 +10,7 @@ import { ListItem } from '../../models/list-item';
 })
 export class ListItemComponent implements OnInit {
 
-  @Input() item: ListItem = {
+  @Input() public item: Admin = {
     image: '/assets/images/test.jpeg',
     name: 'Teste',
     // categories: ['eletricista', 'pintor', 'encanador'],
@@ -17,6 +18,7 @@ export class ListItemComponent implements OnInit {
     // id: '#2222',
     createdAt: {
       date: new Date(),
+      label: 'Data'
     },
     actions: ['email', 'delete']
   };

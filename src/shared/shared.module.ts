@@ -14,9 +14,9 @@ import { RichTextEditorComponent } from './components/rich-text-editor/rich-text
 import { ListItemComponent } from './components/list-item/list-item.component';
 
 import { NavbarComponent } from './templates/navbar/navbar.component';
+import { ListViewComponent } from './templates/list-view/list-view.component';
+
 import { CategoryPipe } from './pipes/category.pipe';
-
-
 
 @NgModule({
   declarations: [
@@ -29,6 +29,7 @@ import { CategoryPipe } from './pipes/category.pipe';
     NavbarComponent,
     ListItemComponent,
     CategoryPipe,
+    ListViewComponent,
   ],
   imports: [
     CommonModule,
@@ -59,8 +60,9 @@ import { CategoryPipe } from './pipes/category.pipe';
     NotesComponent,
     StatusProgressComponent,
     RichTextEditorComponent,
+    ListItemComponent,
     NavbarComponent,
-    ListItemComponent
+    ListViewComponent
   ]
 })
 export class SharedModule { }
