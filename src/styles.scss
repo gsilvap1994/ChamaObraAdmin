@@ -48,17 +48,17 @@ h6 {
     height: 50vh;
     background-color: $primary-orange;
     position: absolute;
-    z-index: 0;
+    z-index: -1;
     border-bottom-right-radius: $default-border-radius;
     border-bottom-left-radius: $default-border-radius;
-    z-index: auto;
   }
 }
 
 // main
 main {
   max-height: 100vh;
-  overflow-y: scroll;
+  min-height: 100vh;
+  overflow-y: auto;
 }
 
 
@@ -92,7 +92,6 @@ form {
     border-top-right-radius: $default-border-radius !important;
   }
 
-  .input-group-prepend,
   .input-group-prepend {
     border-radius: $default-border-radius;
     position: absolute;
@@ -104,7 +103,7 @@ form {
   .input-group-append {
     border-radius: $default-border-radius;
     position: absolute;
-    right: 0;
+    right: 16px;
     min-height: $default-form-control-and-btn-height;
     z-index: 99;
 
@@ -196,6 +195,8 @@ form {
 }
 
 .btn {
+  border-radius: $default-border-radius;
+
   &.rounded {
     border-radius: 1000px !important;
   }
@@ -213,10 +214,12 @@ form {
   border-color: #f4eee6;
   box-shadow: none;
 
-  &:hover, &:active, &:focus {
-    background-color: rgb(194, 194, 194)!important;
-    border-color: rgb(194, 194, 194)!important;
-    box-shadow: none!important;
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: rgb(194, 194, 194) !important;
+    border-color: rgb(194, 194, 194) !important;
+    box-shadow: none !important;
   }
 }
 
@@ -258,6 +261,14 @@ input {
   color: $lighter-grey !important;
 }
 
+.thin {
+ font-weight: 300;
+}
+
+.small {
+  font-size: .85rem;
+}
+
 // background helpers
 .bg-primary {
   background-color: $primary-orange !important;
@@ -279,4 +290,19 @@ input {
 // circle image
 .circle-img {
   border-radius: 100000px;
+}
+
+
+// elements with full width
+.full-width {
+  width: 100%;
+}
+
+
+// user avatars
+.user-image {
+  img {
+    width: 40px;
+    height: 40px;
+  }
 }

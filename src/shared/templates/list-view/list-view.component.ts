@@ -35,7 +35,7 @@ export class ListViewComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    for (let index = 0; index < 20; index++) {
+    for (let index = 0; index < 8; index++) {
       this.listView.push(this._item)
     }
 

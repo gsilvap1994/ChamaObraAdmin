@@ -7,7 +7,7 @@ export class CategoryPipe implements PipeTransform {
 
   transform(categories: string[]): unknown {
     const categoriesString: string = this.capitalize(categories[0]) + ', ' + categories.slice(1, categories.length).join(', ')
-    return (categoriesString.length > 25) ? categoriesString.substr(0, 25) +  '...' : categoriesString.substr(0, 25);
+    return (categoriesString.length > 20) ? categoriesString.substr(0, 20) +  ' ...' : categoriesString.substr(0, 25);
   }
 
   capitalize(string: string): string {

@@ -3,25 +3,25 @@
   <div class="container">
     <div class="row">
       <div class="offset-1 col">
-        <p class="text-primary">Nome</p>
+        <p class="text-primary small" style="font-weight: 400;">Nome</p>
       </div>
       <div class="col" *ngIf="firstItem.categories && firstItem.categories.length">
-        <p class="text-primary">
+        <p class="text-primary small" style="font-weight: 400;">
           Categoria
         </p>
       </div>
       <div class="col" *ngIf="firstItem.status">
-        <p class="text-primary">
+        <p class="text-primary small" style="font-weight: 400;">
           Status
         </p>
       </div>
       <div class="col" *ngIf="firstItem.id">
-        <p class="text-primary">
+        <p class="text-primary small" style="font-weight: 400;">
           ID
         </p>
       </div>
       <div class="col" *ngIf="firstItem.createdAt">
-        <p class="text-primary">
+        <p class="text-primary small" style="font-weight: 400;">
           {{firstItem.createdAt.label}}
         </p>
       </div>

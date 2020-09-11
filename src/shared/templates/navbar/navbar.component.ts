@@ -21,6 +21,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.updateDateNow();
+    console.log('hello hello')
   }
 
   updateDateNow(): void {
