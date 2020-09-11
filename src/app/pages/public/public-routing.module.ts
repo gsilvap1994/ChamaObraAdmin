@@ -1,16 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HandlePublicComponent } from './handle-public.component';
+import { PublicTemplateComponent } from './public-template/public-template.component';
 import { LoginComponent } from './login/login.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 const routes: Routes = [
   {
-    path: '', component: HandlePublicComponent,
+    path: '', component: PublicTemplateComponent,
     children: [
       {
         path: 'login', component: LoginComponent
+      },
+      {
+        path: 'reset', component: ResetPasswordComponent
       }
+
     ]
   }
 ];

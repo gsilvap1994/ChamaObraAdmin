@@ -1,36 +1,25 @@
-<main class="orange-backdrop">
-  <div class="logo mb-4">
-    <img src="/assets/logo/logo-branco.png" alt="Chama Obra">
+<div class="row justify-content-center mt-3">
+  <div class="col-9 mb-2">
+    <h2>Entre</h2>
   </div>
-  <div class="card">
-    <div class="card-body">
-      <div class="container">
-        <div class="row justify-content-center mt-3">
-          <div class="col-8 mb-2">
-            <h2>Entre</h2>
-          </div>
-          <form [formGroup]="loginForm">
-            <div class="row justify-content-center">
-              <div class="col-8 form-group">
-                <input id="username" type="text" class="form-control thin" placeholder="Email" formControlName="username">
-              </div>
-              <div class="col-8 form-group mb-1">
-                <input id="password" type="password" class="form-control thin" placeholder="Senha" formControlName="password">
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="row justify-content-center mb-4">
-          <div class="col-8">
-            <a href="javascript:void(0)" class="text-primary small">Esqueci minha senha</a>
-          </div>
-        </div>
-        <div class="row justify-content-center mb-3">
-          <div class="col-8 text-center">
-            <button (click)="doLogin()" class="btn btn-primary full-width">Entrar</button>
-          </div>
-        </div>
-      </div>
+</div>
+<form [formGroup]="loginForm">
+  <div class="row justify-content-center">
+    <div class="col-9 form-group">
+      <input id="username" type="text" class="form-control thin" placeholder="Email" formControlName="username">
+    </div>
+    <div class="col-9 form-group mb-1">
+      <input id="password" type="password" class="form-control thin" placeholder="Senha" formControlName="password">
     </div>
   </div>
-</main>
+</form>
+<div class="row justify-content-center mb-4">
+  <div class="col-9">
+    <a [routerLink]="['/entrar/reset']" routerLinkActive="true"  class="text-primary small">Esqueci minha senha</a>
+  </div>
+</div>
+<div class="row justify-content-center mb-3">
+  <div class="col-9 text-center">
+    <button (click)="doLogin()" class="btn btn-primary full-width">Entrar</button>
+  </div>
+</div>

@@ -6,13 +6,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PublicRoutingModule } from './public-routing.module';
 
 import { LoginComponent } from './login/login.component';
-import { HandlePublicComponent } from './handle-public.component';
+import { PublicTemplateComponent } from './public-template/public-template.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
-    HandlePublicComponent
+    PublicTemplateComponent,
+    ResetPasswordComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,7 @@ import { HandlePublicComponent } from './handle-public.component';
   ],
   exports: [
     LoginComponent,
-    HandlePublicComponent
+    PublicTemplateComponent
   ]
 })
 export class PublicModule { }
