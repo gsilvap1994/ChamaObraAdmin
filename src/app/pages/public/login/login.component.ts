@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
+import { AuthService } from '../../../../shared/auth/auth.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,7 +12,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   public loginForm: FormGroup;
-  constructor(private fb: FormBuilder, private router: Router) { }
+  constructor(private fb: FormBuilder, private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.loginForm = this.initLoginForm();
@@ -30,7 +32,14 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    this.router.navigate(['/area-de-profissionais']);
+    this.authService.login(this.loginForm.value).subscribe((response: any) => {
+      if(!response.token) {
+        console.log('deu ruim');
+        return;
+      }
+      console.log('deu bom');
+      this.router.navigate(['/area-de-profissionais']);
+    })
 
   }
 }

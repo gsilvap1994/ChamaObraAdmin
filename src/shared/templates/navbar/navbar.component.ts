@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../../shared/auth/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -17,7 +18,7 @@ export class NavbarComponent implements OnInit {
     { id: 'policy', icon: 'lock', isActive: false, name: 'Política', url: '/'},
   ]
   public dateNow: Date = new Date();
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
     this.updateDateNow();
@@ -47,6 +48,10 @@ export class NavbarComponent implements OnInit {
     })
 
     console.log(this.navLinks)
+  }
+
+  logout(): void {
+    this.authService.logout();
   }
 
 }
