@@ -1,4 +1,5 @@
 export class ListItem {
+  id: string;
   image: string; //src
   name: string;
   categories?: string[];
@@ -7,6 +8,6 @@ export class ListItem {
     date: Date;
     label: string;
   }
-  id?: string;
+  serviceId?: string;
   actions?: string[]
 }

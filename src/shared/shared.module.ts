@@ -62,7 +62,8 @@ import { CategoryPipe } from './pipes/category.pipe';
     RichTextEditorComponent,
     ListItemComponent,
     NavbarComponent,
-    ListViewComponent
+    ListViewComponent,
+    CategoryPipe
   ]
 })
 export class SharedModule { }

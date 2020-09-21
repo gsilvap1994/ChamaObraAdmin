@@ -7,18 +7,20 @@ import { SharedModule } from 'src/shared/shared.module';
 
 import { HandlePrivateComponent } from './handle-private.component';
 import { ProfessionalDashComponent } from './professional-dash/professional-dash.component';
+import { ProfessionalDetailsComponent } from './professional-dash/professional-details/professional-details.component';
 
 
 @NgModule({
   declarations: [
     HandlePrivateComponent,
-    ProfessionalDashComponent
+    ProfessionalDashComponent,
+    ProfessionalDetailsComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     PrivateRoutingModule,
-    SharedModule
+    SharedModule,
   ],
   exports: [
     HandlePrivateComponent,

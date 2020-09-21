@@ -5,8 +5,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class CategoryPipe implements PipeTransform {
 
-  transform(categories: string[]): unknown {
-    const categoriesString: string = this.capitalize(categories[0]) + ', ' + categories.slice(1, categories.length).join(', ')
+  transform(categories: string[], shorten: boolean = true): unknown {
+    const categoriesString: string = this.capitalize(categories[0]) + ', ' + categories.slice(1, categories.length).join(', ');
+
+    if(!shorten) {
+      return categoriesString;
+    }
     return (categoriesString.length > 20) ? categoriesString.substr(0, 20) +  ' ...' : categoriesString.substr(0, 25);
   }
 

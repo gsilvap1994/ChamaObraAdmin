@@ -29,9 +29,9 @@
           </div>
         </main>
       </div>
-      <div class="col-4 pl-0">
+      <div class="col-4 px-0">
         <aside>
-          <div class="container">
+          <div class="container-fluid root" *ngIf="isRoot">
             <div class="row pt-5">
               <div class="col-6">
                 <app-featured-card [title]="'10 mil'" [description]="'Profissionais cadastrados'" [orangeBg]="true"></app-featured-card>
@@ -64,6 +64,9 @@
               </div>
 
             </div>
+          </div>
+          <div class="container-fluid not-root" *ngIf="!isRoot">
+            <router-outlet></router-outlet>
           </div>
         </aside>
       </div>

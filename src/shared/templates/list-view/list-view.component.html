@@ -15,7 +15,7 @@
           Status
         </p>
       </div>
-      <div class="col" *ngIf="firstItem.id">
+      <div class="col" *ngIf="firstItem.serviceId">
         <p class="text-primary small" style="font-weight: 400;">
           ID
         </p>
@@ -32,5 +32,5 @@
   </div>
 </div>
 <div class="list-view-table">
-    <app-list-item *ngFor="let listItem of listView" [item]="listItem"></app-list-item>
+    <app-list-item *ngFor="let listItem of listView" [item]="listItem" [smallImage]="smallImage"></app-list-item>
 </div>

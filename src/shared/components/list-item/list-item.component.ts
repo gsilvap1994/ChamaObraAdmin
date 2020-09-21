@@ -15,17 +15,21 @@ export class ListItemComponent implements OnInit {
     name: 'Teste',
     // categories: ['eletricista', 'pintor', 'encanador'],
     // status: 'Ativo',
-    // id: '#2222',
+    id: '2222',
+    // serviceId: '#123'
     createdAt: {
       date: new Date(),
       label: 'Data'
     },
     actions: ['email', 'delete']
   };
+  @Input() public smallImage: boolean = false;
+  @Input() public routeLinks: boolean = true;
   @Output() buttonClicked: EventEmitter<string> = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.smallImage)
   }
 
   onActionClick(action: string): void {

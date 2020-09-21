@@ -1,0 +1,113 @@
+<div class="row">
+  <a [routerLink]="['/area-de-profissionais']" routerLinkActive="true" >
+    <img class="img-fluid close" src="/assets/icons/close.png" alt="Fechar">
+  </a>
+</div>
+<section class="profile mt-4" *ngIf="professional">
+  <div class="row">
+    <div class="col-4 user-image big d-flex justify-content-center">
+      <img class="img-fluid rounded-circle" src="/assets/images/test.jpeg" alt="User" >
+    </div>
+    <div class="col-8 pl-0 d-flex justify-content-center" style="flex-direction: column;">
+      <div class="header">
+        <h2 class="mb-0">{{professional.name}}</h2>
+      </div>
+      <div class="sub">
+        <p class="text-primary mb-0 small">{{professional.categories | category}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="personal-info mt-3" *ngIf="professional">
+  <div class="row header mt-3">
+    <div class="col-12 header-col">
+      <h3 class="mb-0 text-primary">Dados pessoais</h3>
+      <button class="mx-2 btn btn-outline-primary">
+        <img width="14px" src="/assets/icons/folder-orange.png">
+      </button>
+      <button class="mx-2 btn btn-primary">
+        <img width="14px" src="/assets/icons/folder-plus-light.png">
+      </button>
+      <button class="btn btn-primary">
+        Enviar reset de senha
+      </button>
+    </div>
+  </div>
+  <div class="row personal mt-4">
+
+    <div class="col-12 d-flex tile">
+      <span>CPF:</span> <span class="ml-1 thin">{{professional.cpf}}</span>
+    </div>
+    <div class="col-12 d-flex tile">
+      <span>Endereço:</span> <span class="ml-1 thin">{{professional.address}}</span>
+    </div>
+    <div class="col-12 d-flex tile">
+      <span>Celular:</span> <span class="ml-1 thin">{{professional.phone}}</span>
+    </div>
+    <div class="col-12 d-flex tile">
+      <span>Email:</span> <span class="ml-1 thin">{{professional.email}}</span>
+    </div>
+    <div class="col-12 d-flex tile">
+      <span>Atende em:</span> <span class="ml-1 thin">{{professional.operate_at}}</span>
+    </div>
+    <div class="col-12 d-flex tile">
+      <span>Atividades:</span> <span class="ml-1 thin">{{professional.categories | category:false }}</span>
+    </div>
+
+  </div>
+
+  <div class="row account mt-3" *ngIf="professional.account">
+    <div class="col-12 header">
+      <p class="mb-0"><strong>Conta depósito</strong></p>
+    </div>
+    <div class="col-12 d-flex tile mt-3">
+      <span>Titular:</span> <span class="ml-1 thin">{{professional.account.holder}}</span>
+    </div>
+    <div class="col-12 d-flex tile">
+      <span>CPF:</span> <span class="ml-1 thin">{{professional.account.cpf}}</span>
+    </div>
+    <div class="col-12 d-flex tile">
+      <span>Banco:</span> <span class="ml-1 thin">{{professional.account.bank}}</span>
+    </div>
+    <div class="col-12 d-flex tile">
+      <span>Tipo de conta:</span> <span class="ml-1 thin">{{professional.account.account_type}}</span>
+    </div>
+    <div class="col-4 d-flex tile">
+      <span>Agência:</span> <span class="ml-1 thin">{{professional.account.agency}}</span>
+    </div>
+    <div class="col-8 px-1 d-flex tile">
+      <span>Conta:</span> <span class="ml-1 thin">{{professional.account.account_number}}</span>
+    </div>
+
+  </div>
+</section>
+
+<section class="wallet mt-3" *ngIf="professional.wallet">
+  <div class="row">
+    <div class="col-12 header">
+      <h3 class="mb-0 text-primary">Carteira</h3>
+    </div>
+
+    <div class="col-4 mt-3">
+      <h4 class="mb-0"><strong>{{professional.wallet.receivable | currency:'BRL'}}</strong></h4>
+      <span class="small">A receber</span>
+    </div>
+    <div class="col-8 mt-3">
+      <h4 class="mb-0"><strong>{{professional.wallet.balance | currency:'BRL'}}</strong></h4>
+      <span class="small">Na carteira</span>
+    </div>
+  </div>
+</section>
+
+<section class="clients mt-3 mb-5" *ngIf="professional.clients && professional.clients.length">
+  <div class="row">
+    <div class="col-12 header">
+      <h3 class="mb-0 text-primary">Agenda</h3>
+    </div>
+    <div class="col-12 mt-3">
+      <app-list-view [listView]="professional.clients" [smallImage]="true"></app-list-view>
+    </div>
+  </div>
+</section>
+<app-notes>Olá</app-notes>
