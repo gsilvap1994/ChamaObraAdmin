@@ -1,0 +1,71 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2">
+      <app-navbar></app-navbar>
+    </div>
+    <div class="col-6 p-0">
+      <main class="pt-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 search input-group">
+              <input placeholder="Faça uma busca" id="search" type="text" class="form-control">
+              <div class="input-group-append">
+                <button class="btn btn-primary">
+                  <img src="/assets/icons/search-light.png" alt="Buscar">
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-12">
+              <h1>Contratantes</h1>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-12">
+              <app-list-view [listView]="clients"></app-list-view>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div class="col-4 px-0">
+      <aside>
+        <div class="container-fluid root" *ngIf="isRoot">
+          <div class="row pt-5">
+            <div class="col-6">
+              <app-featured-card [title]="'10 mil'" [description]="'Contratantes cadastrados'" [orangeBg]="true">
+              </app-featured-card>
+            </div>
+            <div class="col-6">
+              <app-featured-card [title]="'7,5 mil'" [description]="'Contratantes ativos'" [orangeBg]="false">
+              </app-featured-card>
+            </div>
+          </div>
+          <div class="row my-3">
+            <div class="col-6">
+              <app-featured-card [title]="'2 mil'" [description]="'Contratantes inativos'" [orangeBg]="false">
+              </app-featured-card>
+            </div>
+            <div class="col-6">
+              <app-featured-card [title]="'500'" [description]="'Contratantes bloqueados'" [orangeBg]="false">
+              </app-featured-card>
+            </div>
+          </div>
+          <div class="row no-selected">
+            <div class="col-6 text-center">
+              <div class="image mb-3">
+                <img src="/assets/icons/users-big.png" alt="Icone de usuário">
+              </div>
+              <span class="thin">Selecione um contratante para ver detalhes</span>
+            </div>
+
+          </div>
+        </div>
+        <div class="container-fluid not-root" *ngIf="!isRoot">
+          <router-outlet></router-outlet>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>

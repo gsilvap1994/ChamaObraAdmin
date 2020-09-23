@@ -29,6 +29,7 @@ export class ListViewComponent implements OnInit {
       date: new Date(),
       label: 'Data de Registro'
     },
+    url: '/area-de-profissionais/'
     // actions: ['email', 'delete']
   };
 
@@ -37,10 +38,11 @@ export class ListViewComponent implements OnInit {
 
   ngOnInit(): void {
     if(!this.listView.length) {
-      for (let index = 0; index < 20; index++) {
+      for (let index = 0; index < 8; index++) {
         let item = { ...this._item};
         console.log(`${parseInt(item.id) + 1}`)
         item.id = `${index + 1}`;
+        item.url = item.url + item.id,
         console.log(item)
         this.listView.push(item)
       }

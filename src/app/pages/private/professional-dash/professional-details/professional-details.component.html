@@ -6,7 +6,7 @@
 <section class="profile mt-4" *ngIf="professional">
   <div class="row">
     <div class="col-4 user-image big d-flex justify-content-center">
-      <img class="img-fluid rounded-circle" src="/assets/images/test.jpeg" alt="User" >
+      <img class="img-fluid rounded-circle" [src]="professional.avatar" alt="User" >
     </div>
     <div class="col-8 pl-0 d-flex justify-content-center" style="flex-direction: column;">
       <div class="header">

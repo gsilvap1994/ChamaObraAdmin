@@ -35,7 +35,7 @@ export class ProfessionalDetailsComponent implements OnInit {
         image: '/assets/images/test.jpeg',
         name: 'Maria do carmo',
         createdAt: {
-          date: new Date,
+          date: new Date(),
           label: 'Data de registro'
         }
       },
@@ -44,7 +44,7 @@ export class ProfessionalDetailsComponent implements OnInit {
         image: '/assets/images/test.jpeg',
         name: 'Maria do carmo',
         createdAt: {
-          date: new Date,
+          date: new Date(),
           label: 'Data de registro'
         }
       },
@@ -53,7 +53,7 @@ export class ProfessionalDetailsComponent implements OnInit {
         image: '/assets/images/test.jpeg',
         name: 'Maria do carmo',
         createdAt: {
-          date: new Date,
+          date: new Date(),
           label: 'Data de registro'
         }
       },
@@ -62,7 +62,7 @@ export class ProfessionalDetailsComponent implements OnInit {
         image: '/assets/images/test.jpeg',
         name: 'Maria do carmo',
         createdAt: {
-          date: new Date,
+          date: new Date(),
           label: 'Data de registro'
         }
       },
@@ -71,7 +71,7 @@ export class ProfessionalDetailsComponent implements OnInit {
         image: '/assets/images/test.jpeg',
         name: 'Maria do carmo',
         createdAt: {
-          date: new Date,
+          date: new Date(),
           label: 'Data de registro'
         }
       },
@@ -80,7 +80,7 @@ export class ProfessionalDetailsComponent implements OnInit {
         image: '/assets/images/test.jpeg',
         name: 'Maria do carmo',
         createdAt: {
-          date: new Date,
+          date: new Date(),
           label: 'Data de registro'
         }
       }

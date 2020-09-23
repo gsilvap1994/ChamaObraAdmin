@@ -6,10 +6,10 @@
   <div class="nav-links">
     <ul class="links">
       <li *ngFor="let link of navLinks">
-        <div (click)="activate(link.id)" class="not-active-link" *ngIf="!link.isActive">
+        <a [routerLink]="[link.url]" routerLinkActive="!link.isActive"   class="not-active-link" *ngIf="!link.isActive">
           <img src="/assets/icons/{{link.icon}}-regular.png" [alt]="link.name" class="img-fluid">
           <span class="small">{{link.name}}</span>
-        </div>
+        </a>
         <div class="active-link" *ngIf="link.isActive">
           <div class="card bg-primary">
             <div class="card-body">

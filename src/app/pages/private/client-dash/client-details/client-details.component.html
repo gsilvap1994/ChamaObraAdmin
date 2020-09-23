@@ -1,0 +1,60 @@
+<div class="row">
+  <a [routerLink]="['/area-de-contratantes']" routerLinkActive="true">
+    <img class="img-fluid close" src="/assets/icons/close.png" alt="Fechar">
+  </a>
+</div>
+<section class="profile mt-4" *ngIf="client">
+  <div class="row">
+    <div class="col-4 user-image big d-flex justify-content-center">
+      <img class="img-fluid rounded-circle" [src]="client.avatar" alt="User">
+    </div>
+    <div class="col-8 pl-0 d-flex justify-content-center" style="flex-direction: column;">
+      <div class="header">
+        <h2 class="mb-0">{{client.name}}</h2>
+      </div>
+      <div class="sub" *ngIf="client.createdAt">
+        <p class="text-primary mb-0 small">{{client.createdAt.date | date:'dd/MM/yyyy'}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="personal-info mt-3" *ngIf="client">
+  <div class="row header mt-3">
+    <div class="col-12 header-col">
+      <h3 class="mb-0 text-primary">Dados pessoais</h3>
+      <button class="mx-2 btn btn-outline-primary">
+        <img width="14px" src="/assets/icons/folder-orange.png">
+      </button>
+      <button class="mx-2 btn btn-primary">
+        <img width="14px" src="/assets/icons/folder-plus-light.png">
+      </button>
+      <button class="btn btn-primary">
+        Enviar reset de senha
+      </button>
+    </div>
+  </div>
+  <div class="row personal mt-4">
+    <div class="col-12 d-flex tile">
+      <span>Email:</span> <span class="ml-1 thin">{{client.email}}</span>
+    </div>
+    <div class="col-12 d-flex tile">
+      <span>Celular:</span> <span class="ml-1 thin">{{client.phone}}</span>
+    </div>
+    <div class="col-12 d-flex tile">
+      <span>CPF:</span> <span class="ml-1 thin">{{client.cpf}}</span>
+    </div>
+  </div>
+</section>
+
+<section class="services mt-3" *ngIf="client.services && client.services.length">
+  <div class="row">
+    <div class="col-12 header">
+      <h3 class="mb-0 text-primary">Serviços Contratados</h3>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <app-list-view [listView]="client.services" [smallImage]="true"></app-list-view>
+  </div>
+</section>

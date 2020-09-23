@@ -8,13 +8,17 @@ import { SharedModule } from 'src/shared/shared.module';
 import { HandlePrivateComponent } from './handle-private.component';
 import { ProfessionalDashComponent } from './professional-dash/professional-dash.component';
 import { ProfessionalDetailsComponent } from './professional-dash/professional-details/professional-details.component';
+import { ClientDashComponent } from './client-dash/client-dash.component';
+import { ClientDetailsComponent } from './client-dash/client-details/client-details.component';
 
 
 @NgModule({
   declarations: [
     HandlePrivateComponent,
     ProfessionalDashComponent,
-    ProfessionalDetailsComponent
+    ProfessionalDetailsComponent,
+    ClientDashComponent,
+    ClientDetailsComponent
   ],
   imports: [
     CommonModule,

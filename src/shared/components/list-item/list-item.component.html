@@ -1,6 +1,6 @@
 <div class="list-item border-bottom py-2" *ngIf="item">
   <div class="container">
-    <a class="row-link" [routerLink]="['/area-de-profissionais/' + item.id]" routerLinkActive="true">
+    <a class="row-link" [routerLink]="[item.url ? item.url : '/area-de-profissionais/' + item.id]" routerLinkActive="true">
       <div class="row" >
         <div class="col-1 pr-0 d-flex align-items-center user-image" [class.small-image]="smallImage">
           <img class="img-fluid rounded-circle" [src]="item.image" [alt]="item.name">

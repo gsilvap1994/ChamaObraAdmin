@@ -1,0 +1,48 @@
+.close {
+  position: absolute;
+  right: 1.5rem;
+  top: 1rem;
+  cursor: pointer;
+  width: 16px;
+}
+
+.header {
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+}
+
+
+.personal-info {
+  .header {
+    .header-col {
+      display: flex;
+      align-items: center;
+
+      .btn {
+        padding: .25rem .5rem;
+        font-size: .75rem;
+
+        &.btn-outline-primary {
+
+          &:hover,
+          &:focus,
+          &:active {
+            background-color: #FFF !important;
+          }
+        }
+      }
+    }
+  }
+
+  .tile {
+    span {
+      font-size: .8rem;
+    }
+  }
+
+}

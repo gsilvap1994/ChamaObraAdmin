@@ -4,6 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { HandlePrivateComponent } from './handle-private.component';
 import { ProfessionalDashComponent } from './professional-dash/professional-dash.component';
 import { ProfessionalDetailsComponent } from './professional-dash/professional-details/professional-details.component';
+import { ClientDashComponent } from './client-dash/client-dash.component';
+import { ClientDetailsComponent } from './client-dash/client-details/client-details.component';
 
 const routes: Routes = [
   {
@@ -14,6 +16,14 @@ const routes: Routes = [
         children:[
           {
             path: ':id', component: ProfessionalDetailsComponent
+          }
+        ]
+      },
+      {
+        path: 'area-de-contratantes', component: ClientDashComponent,
+        children: [
+          {
+            path: ':id', component: ClientDetailsComponent
           }
         ]
       }
