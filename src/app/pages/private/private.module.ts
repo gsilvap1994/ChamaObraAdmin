@@ -10,6 +10,8 @@ import { ProfessionalDashComponent } from './professional-dash/professional-dash
 import { ProfessionalDetailsComponent } from './professional-dash/professional-details/professional-details.component';
 import { ClientDashComponent } from './client-dash/client-dash.component';
 import { ClientDetailsComponent } from './client-dash/client-details/client-details.component';
+import { ProfessionalValidationDashComponent } from './professional-validation-dash/professional-validation-dash.component';
+import { ProfessionalValidationDetailsComponent } from './professional-validation-dash/professional-validation-details/professional-validation-details.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { ClientDetailsComponent } from './client-dash/client-details/client-deta
     ProfessionalDashComponent,
     ProfessionalDetailsComponent,
     ClientDashComponent,
-    ClientDetailsComponent
+    ClientDetailsComponent,
+    ProfessionalValidationDashComponent,
+    ProfessionalValidationDetailsComponent,
   ],
   imports: [
     CommonModule,
@@ -28,7 +32,11 @@ import { ClientDetailsComponent } from './client-dash/client-details/client-deta
   ],
   exports: [
     HandlePrivateComponent,
-    ProfessionalDashComponent
+    ProfessionalDashComponent,
+    ProfessionalDetailsComponent,
+    ClientDashComponent,
+    ClientDetailsComponent,
+    ProfessionalValidationDashComponent,
   ]
 })
 export class PrivateModule { }

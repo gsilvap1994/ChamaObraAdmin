@@ -16,7 +16,7 @@
           </span>
         </div>
         <div class="col d-flex align-items-center" *ngIf="item.status">
-          <span class="small thin text-secondary">
+          <span class="small" [class.text-warning]="item.status === 'Pendente'" [class.text-success]="item.status === 'Registrado'">
             {{ item.status }}
           </span>
         </div>
