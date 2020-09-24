@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2">
+      <app-navbar></app-navbar>
+    </div>
+    <div class="col-10 p-0">
+      <main class="pt-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 search input-group">
+              <input placeholder="Faça uma busca" id="search" type="text" class="form-control">
+              <div class="input-group-append">
+                <button class="btn btn-primary">
+                  <img src="/assets/icons/search-light.png" alt="Buscar">
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-12">
+              <h1>Administradores</h1>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-12">
+              <app-list-view [listView]="admins"></app-list-view>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>

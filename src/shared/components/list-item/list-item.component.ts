@@ -30,6 +30,7 @@ export class ListItemComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.smallImage)
+    console.log(this.item)
   }
 
   onActionClick(action: string): void {

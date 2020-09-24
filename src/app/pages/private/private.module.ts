@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 import { PrivateRoutingModule } from './private-routing.module';
-import { SharedModule } from 'src/shared/shared.module';
+import { SharedModule } from '../../../shared/shared.module';
 
 import { HandlePrivateComponent } from './handle-private.component';
 import { ProfessionalDashComponent } from './professional-dash/professional-dash.component';
@@ -12,6 +12,7 @@ import { ClientDashComponent } from './client-dash/client-dash.component';
 import { ClientDetailsComponent } from './client-dash/client-details/client-details.component';
 import { ProfessionalValidationDashComponent } from './professional-validation-dash/professional-validation-dash.component';
 import { ProfessionalValidationDetailsComponent } from './professional-validation-dash/professional-validation-details/professional-validation-details.component';
+import { AdminDashComponent } from './admin-dash/admin-dash.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { ProfessionalValidationDetailsComponent } from './professional-validatio
     ClientDetailsComponent,
     ProfessionalValidationDashComponent,
     ProfessionalValidationDetailsComponent,
+    AdminDashComponent,
   ],
   imports: [
     CommonModule,
@@ -37,6 +39,8 @@ import { ProfessionalValidationDetailsComponent } from './professional-validatio
     ClientDashComponent,
     ClientDetailsComponent,
     ProfessionalValidationDashComponent,
+    ProfessionalValidationDetailsComponent,
+    AdminDashComponent,
   ]
 })
 export class PrivateModule { }
