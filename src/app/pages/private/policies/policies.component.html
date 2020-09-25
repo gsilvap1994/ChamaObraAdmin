@@ -3,7 +3,7 @@
     <div class="col-2">
       <app-navbar></app-navbar>
     </div>
-    <div class="col-6 p-0">
+    <div class="col-10 p-0">
       <main class="pt-5">
         <div class="container">
           <div class="row">
@@ -17,36 +17,38 @@
                 </div>
               </div>
             </div>
+
           </div>
           <div class="row mt-4">
             <div class="col-12">
-              <h1>Validar Profissionais</h1>
+              <h1>Política</h1>
             </div>
           </div>
-          <div class="row mt-4">
+          <div class="row policies justify-content-start my-3">
+            <div class="col-10">
+              <app-rich-text-editor></app-rich-text-editor>
+            </div>
+
+            <div class="col-12 mt-4">
+              <button class="btn btn-primary">Salvar</button>
+            </div>
+          </div>
+          <div class="row mt-5">
             <div class="col-12">
-              <app-list-view [listView]="professinals"></app-list-view>
+              <a href="javascript:void(0)" class="text-primary">Termos de uso</a>
+            </div>
+          </div>
+          <div class="row policies justify-content-start my-3">
+            <div class="col-10">
+              <app-rich-text-editor></app-rich-text-editor>
+            </div>
+
+            <div class="col-12 mt-4">
+              <button class="btn btn-primary">Salvar</button>
             </div>
           </div>
         </div>
       </main>
     </div>
-    <div class="col-4 px-0">
-      <aside class="flex" *ngIf="isRoot">
-        <div class="description">
-          <div class="image mb-3">
-            <img src="/assets/icons/users-big.png" alt="Icone de usuário">
-          </div>
-          <span class="thin">Selecione um profissinoal</span>
-        </div>
-      </aside>
-      <aside *ngIf="!isRoot">
-        <div class="container-fluid not-root" *ngIf="!isRoot">
-          <router-outlet></router-outlet>
-        </div>
-
-      </aside>
-    </div>
   </div>
 </div>
-

@@ -9,6 +9,7 @@ import { ClientDetailsComponent } from './client-dash/client-details/client-deta
 import { ProfessionalValidationDashComponent } from './professional-validation-dash/professional-validation-dash.component';
 import { ProfessionalValidationDetailsComponent } from './professional-validation-dash/professional-validation-details/professional-validation-details.component';
 import { AdminDashComponent } from './admin-dash/admin-dash.component';
+import { PoliciesComponent } from './policies/policies.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,9 @@ const routes: Routes = [
       },
       {
         path: 'administradores', component: AdminDashComponent
+      },
+      {
+        path: 'politica', component: PoliciesComponent
       }
     ]
   }

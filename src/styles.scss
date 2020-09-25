@@ -103,7 +103,7 @@ form {
   .input-group-append {
     border-radius: $default-border-radius;
     position: absolute;
-    right: 16px;
+    right: 1px;
     min-height: $default-form-control-and-btn-height;
     z-index: 99;
 
@@ -322,5 +322,18 @@ input {
   img {
     width: 40px;
     height: 40px;
+  }
+}
+
+.search {
+  max-width: 500px;
+}
+
+
+a {
+  &.text-primary {
+    &:hover, &:active, &:focus {
+      color: $primary-orange-hover!important;
+    }
   }
 }
