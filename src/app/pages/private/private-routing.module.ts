@@ -10,6 +10,8 @@ import { ProfessionalValidationDashComponent } from './professional-validation-d
 import { ProfessionalValidationDetailsComponent } from './professional-validation-dash/professional-validation-details/professional-validation-details.component';
 import { AdminDashComponent } from './admin-dash/admin-dash.component';
 import { PoliciesComponent } from './policies/policies.component';
+import { ServiceDashComponent } from './service-dash/service-dash.component';
+import { ServiceDetailsComponent } from './service-dash/service-details/service-details.component';
 
 const routes: Routes = [
   {
@@ -36,6 +38,14 @@ const routes: Routes = [
         children: [
           {
             path: ':id', component: ProfessionalValidationDetailsComponent
+          }
+        ]
+      },
+      {
+        path: 'servicos', component: ServiceDashComponent,
+        children: [
+          {
+            path: ':id', component: ServiceDetailsComponent
           }
         ]
       },

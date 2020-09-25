@@ -1,0 +1,35 @@
+main {
+  background-color: #f6f6f6;
+
+  .row {
+    justify-content: center;
+  }
+}
+
+aside {
+  background-color: #fafafa;
+  min-height: 100vh;
+  max-height: 100vh;
+  width: 100%;
+  overflow-y: auto;
+
+  &.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+
+    .description {
+
+      .image {
+        display: flex;
+        justify-content: center;
+      }
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}

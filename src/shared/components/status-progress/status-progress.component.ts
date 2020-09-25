@@ -11,10 +11,12 @@ export class StatusProgressComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.dates.push((new Date));
-    this.dates.push((new Date));
-    this.dates.push((new Date));
-    this.dates.push((new Date));
+    if(!this.dates.length) {
+      this.dates.push((new Date));
+      this.dates.push((new Date));
+      this.dates.push((new Date));
+      this.dates.push((new Date));
+    }
 
     console.log(this.dates)
   }

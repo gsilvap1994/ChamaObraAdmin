@@ -1,0 +1,51 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2">
+      <app-navbar></app-navbar>
+    </div>
+    <div class="col-6 p-0">
+      <main class="pt-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="search input-group">
+                <input placeholder="Faça uma busca" id="search" type="text" class="form-control">
+                <div class="input-group-append">
+                  <button class="btn btn-primary">
+                    <img src="/assets/icons/search-light.png" alt="Buscar">
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-12">
+              <h1>Serviços</h1>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-12">
+              <app-list-view [listView]="services"></app-list-view>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div class="col-4 px-0">
+      <aside class="flex" *ngIf="isRoot">
+        <div class="description">
+          <div class="image mb-3">
+            <img src="/assets/icons/tool.png" alt="Icone de usuário">
+          </div>
+          <span class="thin">Selecione um serviço</span>
+        </div>
+      </aside>
+      <aside *ngIf="!isRoot">
+        <div class="container-fluid not-root" *ngIf="!isRoot">
+          <router-outlet></router-outlet>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,123 @@
+<div class="row">
+  <a [routerLink]="['/servicos']" routerLinkActive="true">
+    <img class="img-fluid close" src="/assets/icons/close.png" alt="Fechar">
+  </a>
+</div>
+
+<div class="main" *ngIf="service">
+
+  <section class="profile mt-4">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-4 user-image big d-flex justify-content-center align-items-center">
+          <img class="img-fluid rounded-circle" [src]="service.client.avatar" alt="Client">
+          <img class="img-fluid rounded-circle professional" [src]="service.professional.avatar" alt="Professional">
+
+        </div>
+        <div class="col-8 pl-0 d-flex justify-content-center" style="flex-direction: column;">
+          <div class="header">
+            <h2 class="mb-0">{{service.client.name}} x {{service.professional.name}}</h2>
+          </div>
+          <div class="sub">
+            <p class="text-primary mb-0 small">{{service.type}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="not-chat" *ngIf="!chat">
+    <section class="summary mt-3">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="row header">
+                  <div class="col-12 d-flex justify-content-between">
+                    <h4>Resumo</h4>
+                    <h4 class="text-primary">Valor do serviço: {{service.budget | currency:'BRL'}}</h4>
+                  </div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col-12 d-flex tile">
+                    <span>Contratante:</span> <span class="ml-1 thin">{{service.client.name}}</span>
+                  </div>
+                  <div class="col-12 d-flex tile">
+                    <span>Profissional:</span> <span class="ml-1 thin">{{service.professional.name}}</span>
+                  </div>
+                  <div class="col-12 d-flex tile">
+                    <span>Começar:</span> <span class="ml-1 thin">{{service.date | date:'dd/MM/yyyy'}}</span>
+                  </div>
+                  <div class="col-12 d-flex tile">
+                    <span>Tipo de serviço:</span> <span class="ml-1 thin">{{service.type}}</span>
+                  </div>
+                  <div class="col-12 d-flex tile">
+                    <span>Localização:</span> <span class="ml-1 thin">{{service.address}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="instructions mt-4">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-6">
+            <div class="row">
+              <div class="col-12">
+                <p class="mb-0">Instruções do serviço</p>
+              </div>
+              <div class="col-12 mt-1">
+                <p class="mb-0 thin small">{{service.instructions}}</p>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-6 pr-2">
+                <div class="card">
+                  <img style="border-radius: 10px;" [src]="service.photos[0]" class="img-fluid" alt="">
+                </div>
+              </div>
+              <div class="col-6 pl-2">
+                <div class="card">
+                  <img style="border-radius: 10px;" [src]="service.photos[1]" class="img-fluid" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <app-status-progress [dates]="service.progress"></app-status-progress>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="action mt-3">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 d-flex">
+            <button class="btn btn-primary mr-2">Concluir serviço</button>
+            <button class="btn btn-primary" (click)="chat = !chat">Ver chat</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <section class="chat my-3" *ngIf="chat">
+    <div class="container-fluid">
+      <div class="row my-3" [class.justify-content-center]="message.isSystem" *ngFor="let message of messages">
+        <div class="col-8" [class.offset-4]="message.type === 'professional'">
+          <app-message-card *ngIf="message.messageText" [message]="message"></app-message-card>
+          <app-message-card *ngIf="!message.messageText" [image]="message"></app-message-card>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+

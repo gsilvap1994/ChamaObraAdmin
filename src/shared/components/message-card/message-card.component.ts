@@ -9,6 +9,7 @@ import { Message } from '../../models/message';
 export class MessageCardComponent implements OnInit {
 
   @Input() public message: Message;
+  @Input() public image: string;
   constructor() { }
 
   ngOnInit(): void {

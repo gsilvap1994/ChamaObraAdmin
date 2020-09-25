@@ -14,6 +14,8 @@ import { ProfessionalValidationDashComponent } from './professional-validation-d
 import { ProfessionalValidationDetailsComponent } from './professional-validation-dash/professional-validation-details/professional-validation-details.component';
 import { AdminDashComponent } from './admin-dash/admin-dash.component';
 import { PoliciesComponent } from './policies/policies.component';
+import { ServiceDashComponent } from './service-dash/service-dash.component';
+import { ServiceDetailsComponent } from './service-dash/service-details/service-details.component';
 
 
 @NgModule({
@@ -27,6 +29,8 @@ import { PoliciesComponent } from './policies/policies.component';
     ProfessionalValidationDetailsComponent,
     AdminDashComponent,
     PoliciesComponent,
+    ServiceDashComponent,
+    ServiceDetailsComponent,
   ],
   imports: [
     CommonModule,
@@ -43,6 +47,9 @@ import { PoliciesComponent } from './policies/policies.component';
     ProfessionalValidationDashComponent,
     ProfessionalValidationDetailsComponent,
     AdminDashComponent,
+    PoliciesComponent,
+    ServiceDashComponent,
+    ServiceDetailsComponent
   ]
 })
 export class PrivateModule { }

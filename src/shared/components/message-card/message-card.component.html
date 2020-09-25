@@ -1,13 +1,13 @@
-<div [class]="message.type == 'client' ? 'client' : 'professional'" class="message card my-4" *ngIf="message && !message.isSystem">
+<div [class]="message.type == 'client' ? 'client' : 'professional'" class="message card" *ngIf="message && !message.isSystem">
   <div class="card-header">
-    <div class="name">{{message.author}}</div>
-    <div class="hour">
+    <div class="name small">{{message.author}}</div>
+    <div class="hour small">
       {{message.messageHour}}
     </div>
   </div>
   <div class="card-body">
-    <p class="header small mb-2">{{message.messageHeader}}</p>
-    <p class="text text-thin small mb-2"> {{message.messageText}}</p>
+    <p class="header small mb-1">{{message.messageHeader}}</p>
+    <p class="text thin small mb-1"> {{message.messageText}}</p>
     <p *ngIf="message.type === 'client'"><a href="javascript:void(0)" class="text-primary small" >Ver detalhes</a></p>
   </div>
 </div>
@@ -17,5 +17,11 @@
     <div class="card-body">
       <p class="small text-center m-0">{{message.messageText}}</p>
     </div>
+  </div>
+</div>
+
+<div class="image" *ngIf="!message && image" style="max-width: 120px;">
+  <div class="card">
+    <img style="border-radius: 10px;" [src]="image" class="img-fluid" alt="" >
   </div>
 </div>
