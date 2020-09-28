@@ -12,6 +12,7 @@ import { AdminDashComponent } from './admin-dash/admin-dash.component';
 import { PoliciesComponent } from './policies/policies.component';
 import { ServiceDashComponent } from './service-dash/service-dash.component';
 import { ServiceDetailsComponent } from './service-dash/service-details/service-details.component';
+import { VariablesComponent } from './variables/variables.component';
 
 const routes: Routes = [
   {
@@ -51,6 +52,9 @@ const routes: Routes = [
       },
       {
         path: 'administradores', component: AdminDashComponent
+      },
+      {
+        path: 'variaveis', component: VariablesComponent
       },
       {
         path: 'politica', component: PoliciesComponent

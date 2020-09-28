@@ -2,6 +2,7 @@
 
 .image-card {
   max-width: 200px;
+  min-width: 180px;
 
   &.image {
     border-bottom-left-radius: 0px;
@@ -27,6 +28,7 @@
 .not-service-card {
   min-height: 205px;
   max-width: 200px;
+  min-width: 180px;
   background-color: transparent;
   border-color: $primary-orange;
   border-width: 2px;

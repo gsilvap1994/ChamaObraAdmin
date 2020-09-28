@@ -37,7 +37,8 @@ export class ProfessionalDetailsComponent implements OnInit {
         createdAt: {
           date: new Date(),
           label: 'Data de registro'
-        }
+        },
+        url: '/area-de-contratantes/1'
       },
       {
         id: '2',
@@ -46,7 +47,8 @@ export class ProfessionalDetailsComponent implements OnInit {
         createdAt: {
           date: new Date(),
           label: 'Data de registro'
-        }
+        },
+        url: '/area-de-contratantes/2'
       },
       {
         id: '3',
@@ -55,7 +57,8 @@ export class ProfessionalDetailsComponent implements OnInit {
         createdAt: {
           date: new Date(),
           label: 'Data de registro'
-        }
+        },
+        url: '/area-de-contratantes/3'
       },
       {
         id: '4',
@@ -64,7 +67,8 @@ export class ProfessionalDetailsComponent implements OnInit {
         createdAt: {
           date: new Date(),
           label: 'Data de registro'
-        }
+        },
+        url: '/area-de-contratantes/4'
       },
       {
         id: '5',
@@ -73,7 +77,8 @@ export class ProfessionalDetailsComponent implements OnInit {
         createdAt: {
           date: new Date(),
           label: 'Data de registro'
-        }
+        },
+        url: '/area-de-contratantes/5'
       },
       {
         id: '6',
@@ -82,7 +87,8 @@ export class ProfessionalDetailsComponent implements OnInit {
         createdAt: {
           date: new Date(),
           label: 'Data de registro'
-        }
+        },
+        url: '/area-de-contratantes/6'
       }
     ]
   }

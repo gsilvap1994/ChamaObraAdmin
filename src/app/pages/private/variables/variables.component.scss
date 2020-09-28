@@ -1,0 +1,121 @@
+@import '../../../../styles/variables';
+
+main {
+  background-color: #f6f6f6;
+
+  .row {
+    justify-content: center;
+  }
+
+  .carousel {
+    display: flex;
+    justify-content: space-between;
+    overflow-x: auto;
+
+  }
+
+  .variables {
+    .professional {
+      .main-variables {
+
+        .cards {
+          display: flex;
+          justify-content: flex-start;
+          overflow-x: auto;
+
+          .card {
+
+            min-width: 300px;
+
+            .card-header {
+              background-color: #fff;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              border-bottom: none;
+              border-top-right-radius: $default-border-radius;
+              border-top-left-radius: $default-border-radius;
+            }
+
+            .card-body {
+              padding-top: 0;
+            }
+          }
+        }
+      }
+
+      .faq {
+        .header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .stretch {
+          min-width: 400px;
+          max-width: 400px;
+
+          .card-body {
+            padding: .75rem;
+          }
+
+          input {
+            border: none;
+            width: 100%;
+
+            &:focus {
+              outline: none;
+              border: none;
+            }
+          }
+        }
+
+        .plus {
+          margin-left: calc(800px + 1.5rem);
+        }
+      }
+
+      .texts {
+        .header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+
+.btn {
+
+  &.plus {
+    padding: .25rem .75rem;
+
+    img {
+      width: 12px;
+    }
+  }
+}
+
+::ng-deep {
+  ::-webkit-scrollbar {
+    height: 4px !important;
+    width: 4px !important;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f6f6f6 !important;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $primary-orange !important;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $primary-orange-hover !important;
+  }
+
+}

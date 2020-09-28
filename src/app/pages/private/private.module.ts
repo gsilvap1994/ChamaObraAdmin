@@ -13,9 +13,10 @@ import { ClientDetailsComponent } from './client-dash/client-details/client-deta
 import { ProfessionalValidationDashComponent } from './professional-validation-dash/professional-validation-dash.component';
 import { ProfessionalValidationDetailsComponent } from './professional-validation-dash/professional-validation-details/professional-validation-details.component';
 import { AdminDashComponent } from './admin-dash/admin-dash.component';
-import { PoliciesComponent } from './policies/policies.component';
 import { ServiceDashComponent } from './service-dash/service-dash.component';
 import { ServiceDetailsComponent } from './service-dash/service-details/service-details.component';
+import { PoliciesComponent } from './policies/policies.component';
+import { VariablesComponent } from './variables/variables.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { ServiceDetailsComponent } from './service-dash/service-details/service-
     PoliciesComponent,
     ServiceDashComponent,
     ServiceDetailsComponent,
+    VariablesComponent,
   ],
   imports: [
     CommonModule,
@@ -49,7 +51,8 @@ import { ServiceDetailsComponent } from './service-dash/service-details/service-
     AdminDashComponent,
     PoliciesComponent,
     ServiceDashComponent,
-    ServiceDetailsComponent
+    ServiceDetailsComponent,
+    VariablesComponent,
   ]
 })
 export class PrivateModule { }

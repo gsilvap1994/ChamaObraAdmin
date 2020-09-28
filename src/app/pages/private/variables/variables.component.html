@@ -1,0 +1,133 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2">
+      <app-navbar></app-navbar>
+    </div>
+    <div class="col-10 p-0">
+      <main class="pt-5">
+        <div class="container-fluid">
+          <section class="image-cards">
+            <div class="row">
+              <div class="col-12">
+                <div class="search input-group">
+                  <input placeholder="Faça uma busca" id="search" type="text" class="form-control">
+                  <div class="input-group-append">
+                    <button class="btn btn-primary">
+                      <img src="/assets/icons/search-light.png" alt="Buscar">
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="row mt-4">
+              <div class="col-12">
+                <h1>Variáveis</h1>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col-12 pb-3">
+                <p class="mb-0 text-primary font-weight-bold">Categorias</p>
+              </div>
+              <div class="col-12 carousel pb-4">
+                <app-image-card [isService]="false"></app-image-card>
+                <app-image-card *ngFor="let service of services" [serviceName]="service.serviceName" [serviceImage]="service.serviceImage" [isService]="true"></app-image-card>
+              </div>
+            </div>
+            <div class="row my-2 py2 border-bottom" style="height: 20px;"></div>
+          </section>
+
+          <section class="variables mt-3">
+            <div class="row my-2 choice-buttons">
+              <div class="col-12">
+                <button class="btn mr-2" [class.btn-primary]="professionalVariables" [class.btn-outline-primary]="!professionalVariables" (click)="professionalVariables = true">App profissional</button>
+                <button class="btn" [class.btn-primary]="!professionalVariables" [class.btn-outline-primary]="professionalVariables" (click)="professionalVariables = false">App usuário</button>
+              </div>
+            </div>
+
+            <div class="professional" *ngIf="professionalVariables">
+
+              <div class="row my-4 pb-4 border-bottom main-variables justify-content-start">
+                <div class="col-12 pt-1 pb-3 cards" >
+                  <div class="card mr-3" *ngFor="let variable of mainVariables">
+                    <div class="card-header">
+                      <p class="mb-0 text-primary font-weight-bold">{{variable.title}}</p>
+                      <button class="btn btn-primary plus right">
+                        <img src="/assets/icons/plus-light.png" alt="Adicionar">
+                      </button>
+                    </div>
+                    <div class="card-body">
+                      <div class="thin d-flex justify-content-between pt-2 border-bottom" *ngFor="let item of variable.list">
+                        <span>{{item.label}}</span>
+                        <span *ngIf="item.price">{{item.price | currency:'BRL'}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row my-4 pb-4 border-bottom faq justify-content-start">
+
+                <div class="col-12 header">
+                  <p class="mb-0 font-weight-bold text-primary">Perguntas frequentes</p>
+                  <button class="btn btn-primary" style="min-width: 120px;">Salvar</button>
+                </div>
+
+                <div class="col-12 d-flex align-items-center my-3" *ngFor="let faq of faqs">
+                  <div class="card stretch mr-3">
+                    <div class="card-body">
+                      <p class="mb-0 thin" *ngIf="!faq.new">{{ faq.question }}</p>
+                      <input type="text" [placeholder]="faq.question" *ngIf="faq.new">
+                    </div>
+                  </div>
+
+                  <div class="card stretch mr-3">
+                    <div class="card-body">
+                      <p class="mb-0 thin" *ngIf="!faq.new">{{ faq.answer }}</p>
+                      <input type="text" [placeholder]="faq.answer" *ngIf="faq.new">
+
+                    </div>
+                  </div>
+
+                  <button class="btn btn-icon mt-2" style="position: relative;">
+                    <img src="/assets/icons/trash.png" alt="Remover" class="img-fluid" style="margin-top: -3px;">
+                  </button>
+
+                </div>
+
+                <div class="col-12 d-flex justify-content-start mt-2">
+                  <button class="btn btn-primary plus" (click)="addQuestion()">
+                    <img src="/assets/icons/plus-light.png" alt="Adicionar" >
+                  </button>
+                </div>
+              </div>
+
+              <div class="row my-4 pb-4 border-bottom texts">
+                <div class="col-12 header">
+                  <p class="mb-0 font-weight-bold text-primary">Alterar textos</p>
+                  <button class="btn btn-primary" style="min-width: 120px;">Salvar</button>
+                </div>
+
+                <div class="col-12 my-3">
+                  <p class="mb-0 text-primary thin">Introdução</p>
+                </div>
+
+                <div class="col-12">
+                  <div class="row justify-content-start my-3" *ngFor="let text of texts">
+                    <div class="col-3 d-flex small">
+                      <span>Título:</span> <span class="ml-2 thin">{{text.title}}</span>
+                    </div>
+                    <div class="col-9 d-flex small">
+                      <span>Subtitulo:</span> <span class="ml-2 thin">{{text.subtitle}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>

@@ -111,7 +111,7 @@
   <section class="chat my-3" *ngIf="chat">
     <div class="container-fluid">
       <div class="row my-3" [class.justify-content-center]="message.isSystem" *ngFor="let message of messages">
-        <div class="col-8" [class.offset-4]="message.type === 'professional'">
+        <div class="col-10" [class.offset-2]="message.type === 'professional'">
           <app-message-card *ngIf="message.messageText" [message]="message"></app-message-card>
           <app-message-card *ngIf="!message.messageText" [image]="message"></app-message-card>
         </div>

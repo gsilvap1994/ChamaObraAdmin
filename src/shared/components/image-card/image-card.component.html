@@ -1,4 +1,4 @@
-<div class="service-cards-holder" *ngIf="isService">
+<div class="service-cards-holder px-3" *ngIf="isService">
   <div class="card image-card image" [style.backgroundImage]="'url('+ serviceImage +')'">
     <!-- <img  src="/assets/icons/camera.png" class="icon" alt="Camera" > -->
     <button style="width: 38px;" class="btn btn-icon" (click)="buttonClicked('service-image')">
@@ -19,13 +19,13 @@
   </div>
 </div>
 
-<div class="not-service-card-holder" *ngIf="!isService">
+<div class="not-service-card-holder pr-3" *ngIf="!isService">
   <div class="card not-service-card">
     <div class="card-body">
       <p class="text-primary text-center mb-1 font-weight-bold">
         Adicionar Categoria
       </p >
-      <button class="btn btn-outline btn-outline-primary rounded">+</button>
+      <button class="btn btn-outline btn-outline-primary rounded" style="width: 38px;">+</button>
     </div>
   </div>
 </div>
