@@ -38,7 +38,7 @@ export class ListViewComponent implements OnInit {
 
   ngOnInit(): void {
     if(!this.listView.length) {
-      for (let index = 0; index < 8; index++) {
+      for (let index = 0; index < 6; index++) {
         let item = { ...this._item};
         console.log(`${parseInt(item.id) + 1}`)
         item.id = `${index + 1}`;
