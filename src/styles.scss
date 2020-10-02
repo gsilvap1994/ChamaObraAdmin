@@ -2,6 +2,10 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~quill/dist/quill.core.css";
 @import "~quill/dist/quill.snow.css";
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~ngx-toastr/toastr-bs4-alert';
 @import "./styles/variables";
 
 
@@ -266,7 +270,7 @@ input {
 }
 
 .thin {
- font-weight: 300;
+  font-weight: 300;
 }
 
 .small {
@@ -319,6 +323,7 @@ input {
       height: 60px;
     }
   }
+
   img {
     width: 40px;
     height: 40px;
@@ -332,8 +337,11 @@ input {
 
 a {
   &.text-primary {
-    &:hover, &:active, &:focus {
-      color: $primary-orange-hover!important;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $primary-orange-hover !important;
     }
   }
 }

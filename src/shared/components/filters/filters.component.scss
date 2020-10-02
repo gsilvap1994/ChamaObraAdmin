@@ -1,0 +1,17 @@
+@import '../../../styles/variables';
+
+.filter {
+  background-color: #FFF;
+  border-radius: $default-border-radius;
+  cursor: pointer;
+
+  .small {
+    font-size: 0.75rem;
+  }
+
+  img {
+    width: 12px;
+    margin-left: 5px;
+    padding-top: 2px
+  }
+}

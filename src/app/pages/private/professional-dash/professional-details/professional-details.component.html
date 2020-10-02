@@ -105,6 +105,9 @@
     <div class="col-12 header">
       <h3 class="mb-0 text-primary">Agenda</h3>
     </div>
+    <div class="col-12 my-3">
+      <app-filters [filters]="filters" (emitClickEvent)="filterClicked($event)"></app-filters>
+    </div>
     <div class="col-12 mt-3">
       <app-list-view [listView]="professional.clients" [smallImage]="true"></app-list-view>
     </div>

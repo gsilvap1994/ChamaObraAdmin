@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterEvent } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Service } from '../../../../shared/models/service';
 
 @Component({
@@ -72,7 +73,25 @@ export class ServiceDashComponent implements OnInit {
       url: '/servicos/5'
     },
   ]
-  constructor(private router: Router) { }
+
+  public filters: { label: string, id: string }[] = [
+    {
+      id: 'name',
+      label: 'Nome',
+    },
+    {
+      id: 'category',
+      label: 'Categoria'
+    },
+    {
+      id: 'created_at',
+      label: 'Data de registro'
+    }
+  ]
+
+  public currentFilter: string = '';
+
+  constructor(private router: Router, private notify: ToastrService) { }
 
   ngOnInit(): void {
     this.router.events.subscribe((routerEvent: RouterEvent) => {
@@ -80,6 +99,22 @@ export class ServiceDashComponent implements OnInit {
         this.isRoot = routerEvent.url === '/servicos';
       }
     })
+  }
+
+  filterClicked(id: string) {
+    if (!this.currentFilter) {
+      this.currentFilter = id;
+      this.notify.info(`Filtro escolhido: ${id}`);
+      return;
+    }
+
+    if (this.currentFilter && this.currentFilter == id) {
+      return;
+    }
+
+    this.notify.info(`Filtro escolhido: ${id}`);
+    this.currentFilter = id;
+
   }
 
 }

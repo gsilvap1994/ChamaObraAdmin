@@ -17,6 +17,7 @@ import { NavbarComponent } from './templates/navbar/navbar.component';
 import { ListViewComponent } from './templates/list-view/list-view.component';
 
 import { CategoryPipe } from './pipes/category.pipe';
+import { FiltersComponent } from './components/filters/filters.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { CategoryPipe } from './pipes/category.pipe';
     ListItemComponent,
     CategoryPipe,
     ListViewComponent,
+    FiltersComponent,
   ],
   imports: [
     CommonModule,
@@ -63,7 +65,8 @@ import { CategoryPipe } from './pipes/category.pipe';
     ListItemComponent,
     NavbarComponent,
     ListViewComponent,
-    CategoryPipe
+    CategoryPipe,
+    FiltersComponent
   ]
 })
 export class SharedModule { }

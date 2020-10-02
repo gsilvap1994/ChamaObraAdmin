@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-professional-details',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfessionalDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private notify: ToastrService) { }
   public professional: any = {
     avatar: '/assets/images/test.jpeg',
     name: 'Manuel Almeida',
@@ -92,8 +93,36 @@ export class ProfessionalDetailsComponent implements OnInit {
       }
     ]
   }
+  public currentFilter: string = '';
+
+  public filters: { label: string, id: string }[] = [
+    {
+      id: 'name',
+      label: 'Nome',
+    },
+    {
+      id: 'created_at',
+      label: 'Data de registro'
+    }
+  ]
 
   ngOnInit(): void {
+  }
+
+  filterClicked(id: string) {
+    if (!this.currentFilter) {
+      this.currentFilter = id;
+      this.notify.info(`Filtro escolhido: ${id}`);
+      return;
+    }
+
+    if (this.currentFilter && this.currentFilter == id) {
+      return;
+    }
+
+    this.notify.info(`Filtro escolhido: ${id}`);
+    this.currentFilter = id;
+
   }
 
 }

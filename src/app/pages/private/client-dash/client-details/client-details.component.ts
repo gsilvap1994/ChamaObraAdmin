@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-client-details',
@@ -75,9 +76,41 @@ export class ClientDetailsComponent implements OnInit {
       }
     ]
   }
-  constructor() { }
+  public filters: { label: string, id: string }[] = [
+    {
+      id: 'name',
+      label: 'Nome',
+    },
+    {
+      id: 'category',
+      label: 'Categoria'
+    },
+    {
+      id: 'created_at',
+      label: 'Data'
+    }
+  ]
+
+  public currentFilter: string = '';
+  constructor(private notify: ToastrService) { }
 
   ngOnInit(): void {
+  }
+
+  filterClicked(id: string) {
+    if (!this.currentFilter) {
+      this.currentFilter = id;
+      this.notify.info(`Filtro escolhido: ${id}`);
+      return;
+    }
+
+    if (this.currentFilter && this.currentFilter == id) {
+      return;
+    }
+
+    this.notify.info(`Filtro escolhido: ${id}`);
+    this.currentFilter = id;
+
   }
 
 }

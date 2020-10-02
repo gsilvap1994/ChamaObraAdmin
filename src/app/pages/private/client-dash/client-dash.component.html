@@ -23,6 +23,11 @@
               <h1>Contratantes</h1>
             </div>
           </div>
+          <div class="row mt-2 mb-3">
+            <div class="col-12">
+              <app-filters [filters]="filters" (emitClickEvent)="filterClicked($event)"></app-filters>
+            </div>
+          </div>
           <div class="row mt-4">
             <div class="col-12">
               <app-list-view [listView]="clients"></app-list-view>

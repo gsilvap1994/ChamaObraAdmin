@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterEvent } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 import { ProfessionalValidation } from '../../../../shared/models/professional-validation';
 
@@ -73,8 +74,27 @@ export class ProfessionalValidationDashComponent implements OnInit {
       url: '/validacao-profissionais/5'
     },
   ]
-  public isRoot: boolean = this.router.url === '/validacao-profissionais'
-  constructor(private router: Router) { }
+  public isRoot: boolean = this.router.url === '/validacao-profissionais';
+  public filters: { label: string, id: string }[] = [
+    {
+      id: 'name',
+      label: 'Nome',
+    },
+    {
+      id: 'category',
+      label: 'Categoria'
+    },
+    {
+      id: 'status',
+      label: 'Status'
+    },
+    {
+      id: 'created_at',
+      label: 'Data'
+    }
+  ]
+  public currentFilter: string = '';
+  constructor(private router: Router, private notify: ToastrService) { }
 
   ngOnInit(): void {
     this.router.events.subscribe((routerEvent: RouterEvent) => {
@@ -82,6 +102,21 @@ export class ProfessionalValidationDashComponent implements OnInit {
         this.isRoot = routerEvent.url === '/validacao-profissionais';
       }
     })
+  }
+
+  filterClicked(id: string)  {
+    if (!this.currentFilter) {
+      this.currentFilter = id;
+      this.notify.info(`Filtro escolhido: ${id}`);
+      return;
+    }
+
+    if (this.currentFilter && this.currentFilter == id) {
+      return;
+    }
+
+    this.notify.info(`Filtro escolhido: ${id}`);
+    this.currentFilter = id;
   }
 
 }
